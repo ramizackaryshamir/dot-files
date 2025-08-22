@@ -23,7 +23,8 @@ PF_ANCHOR_FILE="/etc/pf.anchors/${PF_ANCHOR_NAME}"
 BACKUP="/etc/pf.conf.backup.$(date +%s)"
 
 # Allow-list common ports you expect to be open (edit as needed)
-WHITELIST_PORTS=(80 443 53)   # HTTP, HTTPS, DNS
+# HTTP HTTPS DNS HTTP Alternative OPENVPN UDP OPENVPN TCP WIREGUARD UDP
+WHITELIST_PORTS=(80 443 53 8080 1194 443 51820)
 
 # --- Helpers ---
 log() { echo "$@" | tee -a "$LOG_FILE"; }
